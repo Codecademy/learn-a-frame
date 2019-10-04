@@ -8,7 +8,7 @@ Learn A-Frame 👓 | Codecademy
 
 **Solar System:**
 
-- [ ] index.html
+- [ ] [index.html](/introduction/index.html)
 
 ## 2. Animation ##
 
