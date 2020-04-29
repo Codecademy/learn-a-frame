@@ -10,7 +10,11 @@ Learn A-Frame 👓 | Codecademy
 
 - [ ] [index.html](/introduction/index.html)
 
-## 2. Animation ##
+## 2. HTML & Primitives ##
+
+**Flower of Life:**
+
+- [ ] `flower.html`
 
 ## 3. Adding JavaScript ##
 
