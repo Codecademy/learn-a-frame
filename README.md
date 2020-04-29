@@ -14,6 +14,12 @@ Learn A-Frame 👓 | Codecademy
 
 ## 3. Adding JavaScript ##
 
+
+Research
+
+- Udemy: Learn A-Frame And Get Ready For WebVR (Danilo Pasquariello)
+
+
 ## Contribution Guidelines
 
 We'd love to have you contribute! 
