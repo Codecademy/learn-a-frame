@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>L12 - Sky and 360° image</title>
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            <!-- Asset Management System -->
+            <a-assets>
+                <img id="floor" src="L12-IMGs/floor-1024.jpg">
+                <img id="floor-NRM" src="L12-IMGs/floor-1024-NRM.jpg">
+                <img id="clear-sunny-sky" src="L12-IMGs/clear-sunny-sky.jpg">
+                <img id="360-panorama" src="L12-IMGs/360-panorama.jpg">
+            </a-assets>
+            
+            <!-- Ground -->
+            <a-plane material="color: #FFFFFF;
+                               src: #floor;
+                               repeat: 5 5;
+                               normal-map: #floor-NRM;
+                               normal-texture-repeat: 5 5"
+                     rotation="-90 0 0"
+                     scale="10 10 1">
+            </a-plane>
+        </a-scene>
+    </body>
+</html>
