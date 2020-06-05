@@ -3,25 +3,51 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene>
-      <a-sky color="#FF5733"></a-sky>
+    <a-scene background="color: #FF5733">
       <!-- Create the circles below: -->
-      <a-circle opacity=".5" position="0 2 -10" radius="1" color="#F5C85D">
-        <a-circle opacity=".5" position="0 1 0" radius="1" color="#F5C85D"></a-circle>
-        <a-circle opacity=".5" position="0 -1 0" radius="1" color="#F5C85D"></a-circle>
-        <a-circle opacity=".5" position="0 -2 0" radius="1" color="#F5C85D"></a-circle>
-        <a-circle opacity=".5" position="0 2 0" radius="1" color="#F5C85D"></a-circle>
-     
-        <a-circle opacity=".5" position="1 0.5 0" radius="1" color="#F5C85D"></a-circle> 
-        <a-circle opacity=".7" position="1 1.5 0" radius="1" color="#F5C85D"></a-circle>
-        <a-circle opacity=".5" position="1 -0.5 0" radius="1" color="#F5C85D"></a-circle>
-        <a-circle opacity=".5" position="1 -1.5 0" radius="1" color="#F5C85D"></a-circle>
+      <a-circle 
+        color="red"
+        position="0 2 -10" 
+        radius="1"
+        opacity="0.5"></a-circle>
 
-        <a-circle opacity=".5" position="-1 0.5 0" radius="1" color="#F5C85D"></a-circle> 
-        <a-circle opacity=".7" position="-1 1.5 0" radius="1" color="#F5C85D"></a-circle>
-        <a-circle opacity=".5" position="-1 -0.5 0" radius="1" color="#F5C85D"></a-circle>
-        <a-circle opacity=".5" position="-1 -1.5 0" radius="1" color="#F5C85D"></a-circle>
-      </a-circle>
+      <a-circle 
+        color="#F5C85D"
+        position="0 1 -10" 
+        radius="1"
+        opacity="0.5"></a-circle>
+
+      <a-circle 
+        color="#F5C85D"
+        position="0 3 -10" 
+        radius="1"
+        opacity="0.5"></a-circle>
+
+      <!-- Right circles: -->
+      <a-circle 
+        color="#F5C85D"
+        position="0.866 2.5 -10" 
+        radius="1"
+        opacity="0.5"></a-circle>
+
+      <a-circle 
+        color="#F5C85D"
+        position="0.866 1.5 -10" 
+        radius="1"
+        opacity="0.5"></a-circle>
+
+      <!-- Left circles -->
+      <a-circle 
+        color="#F5C85D"
+        position="-0.866 2.5 -10" 
+        radius="1"
+        opacity="0.5"></a-circle>
+
+      <a-circle 
+        color="#F5C85D"
+        position="-0.866 1.5 -10" 
+        radius="1"
+        opacity="0.5"></a-circle>
     </a-scene>
   </body> 
 </html>
