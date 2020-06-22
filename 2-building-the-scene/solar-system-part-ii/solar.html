@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Asset management system -->
+      <a-assets>
+        <img 
+          id="space"
+          src="space.jpg">
+        <img 
+          id="sun" 
+          src="sun.jpg">
+        <img 
+          id="mercury"
+          src="mercury.jpg">
+        <img 
+          id="venus"
+          src="venus.jpg">
+        <img
+          id="earth"
+          src="earth.jpg">
+        <img 
+          id="mars"
+          src="mars.jpg">
+        <img 
+          id="jupiter"
+          src="jupiter.jpg">
+        <img 
+          id="saturn"
+          src="saturn.jpg">
+        <img 
+          id="uranus"
+          src="uranus.jpg">
+        <img 
+          id="neptune"
+          src="neptune.jpg"> 
+      </a-assets>
+
+      <a-sky
+        src="#space"></a-sky>
+
+      <a-sphere 
+        src="#sun"
+        position="-12 2 -15" 
+        radius="3"
+        ></a-sphere>
+
+      <!-- Mercury -->
+      <a-sphere
+        src="#mercury"
+        position="-7 2 -15"
+        radius=".25"></a-sphere>
+
+      <!-- Venus -->
+      <a-sphere 
+        src="#venus"
+        position="-5 2 -15" 
+        radius=".5"></a-sphere>
+
+      <!-- Earth -->
+      <a-sphere 
+        src="#earth"
+        position="-3 2 -15" 
+        radius=".5"
+        animation="property: object3D.rotation.y;
+          to: 360;
+          dur: 10000;
+          loop: true">
+      </a-sphere>
+
+      <!-- Mars -->
+      <a-sphere 
+        src="#mars"
+        position="-1 2 -15" 
+        radius=".25"></a-sphere>
+
+      <!-- Jupiter -->
+      <a-sphere 
+        src="#jupiter"
+        position="1 2 -15"
+        radius="1"></a-sphere>
+      
+      <!-- Saturn -->
+      <!-- <a-sphere 
+        src="#saturn"
+        position="4 2 -15" 
+        radius=".8"></a-sphere> -->
+
+      <!-- Uranus -->
+      <a-sphere 
+        src="#uranus"
+        position="7 2 -15"
+        radius=".75"></a-sphere>
+
+      <!-- Neptune -->
+      <a-sphere 
+        src="#neptune"
+        position="10 2 -15" 
+        radius=".75"></a-sphere>
+     
+      <!-- Saturn has rings around it that are made of torii (singular torus) -->
+      <a-entity 
+        position="4 2 -15">
+        <a-sphere 
+          position="0 0 0" 
+          radius=".8"
+          src="#saturn"></a-sphere>
+        <a-torus 
+          id="saturn-ring-1" 
+          color="#57524A" 
+          segments-tubular="50" 
+          radius="3.2" 
+          radius-tubular="0.1" 
+          rotation="90 0 0" 
+          scale=".44 .44 0.04"></a-torus>
+        <a-torus 
+          id="saturn-ring-2" 
+          color="#A29A87" 
+          segments-tubular="50" 
+          radius="2.4" 
+          radius-tubular="0.2" 
+          rotation="90 0 0" 
+          scale=".44 .44 0.04"></a-torus>
+      </a-entity>
+    
+      <a-light 
+        type="point" 
+        intensity="2" 
+        position="-8 2 -6"></a-light>
+    </a-scene>
+  </body>
+</html>
