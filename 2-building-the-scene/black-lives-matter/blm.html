@@ -3,21 +3,52 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene background="color: #FFF">
+    <a-scene>
+      <!-- Write your code below -->
       <a-assets>
+        <img
+          id="ceiling"
+          src="gallery_ceiling.png">
+        <img
+          id="floor"
+          src="gallery_floor.png">
         <img 
-          id="groundTexture" 
-          src="footprint.jpg">
+          id="footprint" 
+          src="footprint.png">
       </a-assets>
 
-      <a-sky color="#F3F3F3"></a-sky>
+      <a-sky src="#ceiling"></a-sky>
+
+      <a-plane
+        src="#floor"
+        rotation="-90 0 0"
+        position="0 -5 0"
+        width="60"
+        height="60"></a-plane>
 
       <a-plane 
-        src="#groundTexture"
-        position="0 -5 0"
+        src="#footprint"
+        position="0 -4.9 0"
         rotation="-90 0 0" 
-        width="1" 
-        height="1"></a-plane>
+        scale="1.4 1.4 1.4"></a-plane>
+
+      <a-text 
+        value="Black Lives Matter (2020)"
+        color="#000"
+        align="left"
+        font="dejavu"
+        position="-0.75 0.4 -3"
+        rotation="-20 0 0"
+        scale="0.5 0.5 0.5">
+        <a-text 
+        value="3D sculpture. When you view the 99 spheres from six meters away, you see an image of a raised fist that represents unity and solidarity in the ongoing fight against racism."
+        color="#000"
+        position="0 -0.5 0"
+        scale="0.7 0.7 0.7"
+        ></a-text>
+        </a-text>
+
+      <!-- Spheres -->
 
       <a-sphere
         id="1"
@@ -274,64 +305,64 @@
       <a-sphere
         id="41"
         color="#000" 
-        position="1 0 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="2.6 -2.7 -16"
+        scale="0.5 0.5 0.5"></a-sphere>
 
       <a-sphere 
         id="42"
         color="#000"
-        position="1 0.3 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="1.7 -0.6 -10"
+        scale="0.3 0.3 0.3"></a-sphere>
 
       <a-sphere 
         id="43"
         color="#000"
-        position="1.1 0.6 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="2.3 -0.6 -13"
+        scale="0.45 0.45 0.45"></a-sphere>
 
       <a-sphere
         id="44" 
         color="#000"
-        position="1.2 0.9 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="3.9 -0.8 -20"
+        scale="0.6 0.6 0.6"></a-sphere>
 
       <a-sphere 
         id="45"
         color="#000"
-        position="1.4 1.2 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="2.2 0.9 -10"
+        scale="0.3 0.3 0.3"></a-sphere>
 
       <a-sphere 
         id="46"
         color="#000"
-        position="1.6 1.5 -6"
+        position="2 1.3 -8"
         scale="0.2 0.2 0.2"></a-sphere>
 
       <a-sphere
         id="47" 
         color="#000"
-        position="1.75 1.8 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="4.3 1.7 -16"
+        scale="0.45 0.45 0.45"></a-sphere>
 
       <a-sphere
         id="48" 
         color="#000"
-        position="1.9 2.1 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="3.5 2.2 -12"
+        scale="0.35 0.35 0.35"></a-sphere>
 
       <!-- Rest of thumb -->
 
       <a-sphere
         id="49" 
         color="#000"
-        position="0.4 3.55  -9"
+        position="0.4 3.55 -9"
         scale="0.3 0.3 0.3"></a-sphere>
 
      <a-sphere 
         id="50"
         color="#000"
-        position="-0.1 2.8 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="-0.2 3.8 -11"
+        scale="0.3 0.3 0.3"></a-sphere>
 
       <a-sphere 
         id="51"
@@ -342,34 +373,34 @@
       <a-sphere 
         id="52"
         color="#000"
-        position="-0.7 3.0 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="-2.2 6 -19"
+        scale="0.55 0.55 0.55"></a-sphere>
 
       <a-sphere 
         id="53"
         color="#000"
-        position="-0.85 2.7 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="-1.4 3.3 -9"
+        scale="0.3 0.3 0.3"></a-sphere>
 
       <a-sphere
         id="54"
         color="#000"
-        position="-0.65 2.7 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="-1.8 4.8 -16"
+        scale="0.4 0.4 0.4"></a-sphere>
 
       <a-sphere 
         id="55"
         color="#000"
-        position="-1.05 2.4 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="-2 3.2 -12"
+        scale="0.4 0.4 0.4"></a-sphere>
      
       <!-- Palm -->
 
       <a-sphere 
         id="56"
         color="#000"
-        position="-0.7 2.5 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="-2 4.3 -17"
+        scale="0.5 0.5 0.5"></a-sphere>
 
       <a-sphere 
         id="57"
@@ -386,70 +417,70 @@
       <a-sphere 
         id="59"
         color="#000"
-        position="0.1 2 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="0.1 2.1 -8"
+        scale="0.25 0.25 0.25"></a-sphere>
 
       <a-sphere 
         id="60"
         color="#000"
-        position="0.25 1.7 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="0.35 1.75 -9"
+        scale="0.3 0.3 0.3"></a-sphere>
 
       <a-sphere 
         id="61"
         color="#000"
-        position="0.4 1.4 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="1 1.2 -14"
+        scale="0.4 0.4 0.4"></a-sphere>
 
       <a-sphere 
         id="62"
         color="#000"
-        position="0.4 1.1 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="1.3 0.1 -18"
+        scale="0.55 0.55 0.55"></a-sphere>
 
       <a-sphere 
         id="63"
         color="#000"
-        position="0.35 0.8 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="0.4 0.7 -7"
+        scale="0.25 0.25 0.25"></a-sphere>
       
       <a-sphere 
         id="64"
         color="#000"
-        position="0.3 0.5 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="0.5 -0.2 -10"
+        scale="0.35 0.35 0.35"></a-sphere>
 
       <a-sphere 
         id="65"
         color="#000"
-        position="0.25 0.2 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="0.8 -1.8 -15"
+        scale="0.4 0.4 0.4"></a-sphere>
 
       <a-sphere 
         id="66"
         color="#000"
-        position="0.2 0 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="0.8 -3.25 -18"
+        scale="0.55 0.55 0.55"></a-sphere>
 
       <!-- Thumb fill-in -->
 
       <a-sphere 
         id="67"
         color="#000"
-        position="-0.3 0 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="-0.4 -0.5 -8"
+        scale="0.3 0.3 0.3"></a-sphere>
 
       <a-sphere 
         id="68"
         color="#000"
-        position="-0 0 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="-0 -1.35 -11"
+        scale="0.35 0.35 0.35"></a-sphere>
 
       <a-sphere 
         id="69"
         color="#000"
-        position="-0.25 0.3 -6"
-        scale="0.2 0.2 0.2"></a-sphere>
+        position="-0.42 -0.4 -9"
+        scale="0.32 0.32 0.32"></a-sphere>
 
       <a-sphere 
         id="70"
@@ -633,11 +664,6 @@
         position="3.75 1.4 -17"
         scale="0.5 0.5 0.5"></a-sphere>
 
-      <!-- <a-light 
-        type="point" 
-        color="white" 
-        position="0 3 -20" 
-        intensity="1"></a-light> -->
     </a-scene>
 
   </body>
