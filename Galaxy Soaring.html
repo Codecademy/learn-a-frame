@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Soaring through the Star Wars galaxy: A hyperspace VR experience</title>
+    <meta name="description" content="Soar your way around the galaxy with a selection of the Star Wars Galaxy built with A-Frame">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js">
+    </script>
+  </head>  
+  <body>
+    <a-scene>
+     
+  <a-camera>
+  <a-cursor position="0 0 -1"
+            geometry="primitive:sphere; radius:0.05"
+            material="color:#00ff7f; shader:flat; opacity:0.5"></a-cursor>
+  </a-camera>
+ 
+      
+      <a-mixin id="orbit" animation="property: rotation; loop: true; to: 0 360 0; dur: 50000; easing: linear;"></a-mixin>
+      
+        <a-assets>
+          <audio id="ambient" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FFree%20Your%20Mind%20Meditation.mp3?v=1633572332278"></audio>
+          <img id="dagohbah" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FDagohbah.jpg?v=1633446600152">
+          <img id ="hprime" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2Fhosnian%20prime.jpg?v=1633446569191">
+          <img id="endor" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FEndor.png?v=1633446656274">
+          <img id="jakku" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2Fjakku1.jpg?v=1633449930087">
+          <img id="hoth" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FHoth1.jpg?v=1633754492487">
+          <img id="batuu" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FBatuu1.jpg?v=1633965460024">
+          <img id="dathomir" src="https://cdn.glitch.com/973c5e46-839a-4e1c-9753-a166bac8c92f%2FDathomir.png?v=1633139007658">
+          <img id="kuat"src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2Fkuat1.png?v=1633707641287">
+          <img id="tattooine" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2Ftattooine.jpg?v=1633452085893">
+          <img id="naboo" src ="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FNaboo1.jpg?v=1633967748535">
+          <img id="alderaan" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FAlderaan.jpg?v=1633710681234">
+          <img id="kashyyk" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2Fkashyyk.jpg?v=1633448832278">
+          <img id="core" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FCore1.jpg?v=1633530788206">
+          <img id="mustafar" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FMustafar1.jpg?v=1633967756621">
+          <img id="geonosis" src="https://cdn.glitch.com/c9a1f003-f55d-40cc-a4eb-a8126eb36de7%2FGeonosis.jpg?v=1632843992306">
+          <img id="corellia" src="https://cdn.glitch.com/c9a1f003-f55d-40cc-a4eb-a8126eb36de7%2FCorellia.jpg?v=1632841145670">
+          <img id="mandalore" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FMando1.png?v=1633967772063">
+          <img id="coruscant" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2FCorcuscant2.jpg?v=1633702549695">
+          <img id="space" src="https://cdn.glitch.me/973c5e46-839a-4e1c-9753-a166bac8c92f%2Fspace1.jpg?v=1633967101073">
+        </a-assets>
+
+      <a-entity id="basic-light" light="type: ambient; color: #BBB"></a-entity>
+      
+     
+      <a-sky src="#space"></a-sky>
+     <!-- <a-sound src="#ambient"
+               autoplay="true"></a-sound>-->
+      
+      <!--Core --> 
+      <!--Planet Mechanics-->
+      <a-sphere 
+        src="#core"
+        position="0 0 0" 
+        radius="15"
+        light="type: point"         
+        animation="property: object3D.rotation.y;
+              to: 360;
+              dur: 5500;
+              easing: linear;
+              loop: true"
+        event-set__enter="_event: mouseenter; _target: #coreText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #coreText; visible: false">        
+        </a-sphere>
+        
+        <a-text id="coreText" value="Core" align="center" color="#FFF" visible="false" position="25 10 1"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="5.5 5.5 5.5"></a-text>
+      
+      
+      
+      <!--Corellia-->
+      <!--Planet Mechanics-->
+      <a-entity
+       id="orbit-corellia" mixin="orbit" animation="dur: 45068;">
+        <a-sphere 
+          src="#corellia"
+          position="0 0 45"
+          radius="5.5"
+          animation="property: object3D.rotation.y;
+                    to: 360;
+                    dur: 10400;
+                    easing: linear;
+                    loop: true"
+          event-set__enter="_event: mouseenter; _target: #corelliaText; visible: true"
+          event-set__leave="_event: mouseleave; _target: #corelliaText; visible: false"></a-sphere>
+       
+      <!--Corellia label-->
+      <a-text id="corelliaText" value="Core World: Corellia" align="center" color="#FFF" visible="false" position="10 5 45"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      </a-entity>
+       
+      <!-- Corellia Orbital guide-->
+      <a-entity geometry="primitive: torus; radius: 21; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+               rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      
+      <!--Coruscant-->
+      <!--Planet Mechanics-->
+     <a-entity
+         id="orbit-coruscant" mixin="orbit" animation="dur: 50000;"> 
+      <a-sphere 
+          src="#coruscant"
+          position="0 0 80"
+          radius="6.12"
+          animation="property: object3D.rotation.y;
+                    to: 360;
+                    dur: 10000;
+                    easing:linear;
+                    loop: true"
+          event-set__enter="_event: mouseenter; _target: #coruscantText; visible: true"
+          event-set__leave="_event: mouseleave; _target: #coruscantText; visible: false"></a-sphere>
+      
+      <!--Coruscant Label-->
+      <a-text id="coruscantText" value="Core World: Coruscant" align="center" color="#FFF" visible="false" position="10 5 80"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      </a-entity>  
+      
+      <!--Coruscant Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 40; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      
+      <!--Hosnian Prime-->
+      <!--Planet Mechanics-->
+     <a-entity
+       id="orbit-hprime" mixin="orbit" animation="dur: 50273;">
+        <a-sphere
+          src="#hprime"
+          position="0 0 100"
+          radius="5.81"
+          animation="property: object3D.rotation.y;
+                     to: 360;
+                     dur: 10000;
+                     easing:linear;
+                     loop: true"
+          event-set__enter="_event: mouseenter; _target: #hprimeText; visible: true"
+          event-set__leave="_event: mouseleave; _target: #hprimeText; visible: false"></a-sphere>
+      </a-entity>
+      
+      <!--Hosnian Prime Label-->
+      <a-text id="hprimeText" value="Core World: Hosnian Prime" align="center" color="#FFF" visible="false" position="10 5 100"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      
+      <!--Hosnian Prime Orbital Guide-->
+       <a-entity geometry="primitive: torus; radius: 50; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+            
+      
+      <!--Kuat-->
+      <!--Planet Mechanics-->
+      <a-entity
+        id="orbit-kuat" mixin="orbit" animation="dur: 44109;">
+       <a-sphere
+          src="#kuat"
+          position =" 0 0 120"
+          radius="5"
+          animation="property: object3D.rotation.y;
+                    to: 360;
+                    dur: 8300;
+                    easing: linear;
+                    loop: true"
+          event-set__enter="_event: mouseenter; _target: #kuatText; visible: true"
+          event-set__leave="_event: mouseleave; _target: #kuatText; visible: false"></a-sphere>
+      </a-entity>
+      
+      <!--Kuat Label-->
+      <a-text id="kuatText" value="Core Worlds: Kuat" align="center" color="#FFF" visible="false" position="10 5 120"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      <!--Kuat Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 60.5; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>  
+      
+      
+      
+      <!--Alderaaan-->
+      <!--Planet Mechanics-->
+      <a-entity
+          id="orbit-alderaan" mixin="orbit" animation="dur: 49863;">
+      <a-sphere
+         src="#alderaan"
+         position="0 0 150"
+         radius="6.25"
+         animation="property: object3D.rotation.y;
+                     to: 360;
+                     dur: 10000;
+                     easing:linear;
+                     loop: true"
+         event-set__enter="_event: mouseenter; _target: #alderaanText; visible: true"
+         event-set__leave="_event: mouseleave; _target: #alderaanText; visible: false"></a-sphere>
+        
+      </a-sphere>
+      </a-entity>
+      
+      <!--Planet Label-->
+       <a-text id="alderaanText" value="Core World: Alderaan" align="center" color="#FFF" visible="false" position="10 5 150"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      <!--Alderaan Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 75; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      
+      <!--Jakku-->
+      <!-- Planet Mechanics-->
+      <a-entity
+         id="orbit-jakku" mixin="orbit" animation="dur: 43150;">  
+      <a-sphere
+          src="#jakku"
+          position="0 0 170"
+          radius="3.2"
+          animation="property: object3D.rotation.y;
+                     to: 360;
+                     dur: 11600;
+                     easing:linear;
+                     loop: true"
+          event-set__enter="_event: mouseenter; _target: #jakkuText; visible: true"
+          event-set__leave="_event: mouseleave; _target: #jakkuText; visible: false"></a-sphere>
+    
+       </a-entity>
+      
+      <!--Jakku Label-->
+      <a-text id="jakkuText" value="Inner Rim Planet: Jakku" align="center" color="#FFF" visible="false" position="10 5 170"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      
+      <!--Jakku Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 85; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      
+      <!--Naboo-->
+      <!-- Planet Mechanics-->
+     <a-entity
+       id="orbit-naboo" mixin="orbit" animation="dur:42739;">
+      <a-sphere 
+       src="#naboo"
+       position="0 0 190"
+       radius="6.06"
+       animation="property: object3D.rotation.y;
+                    to: 360;
+                    dur: 10833;
+                    easing:linear;
+                    loop: true"
+       event-set__enter="_event: mouseenter; _target: #nabooText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #nabooText; visible: false"></a-sphere>
+     </a-entity>
+     <!--Naboo Label-->
+     <a-text id="nabooText" value="Mid Rim Planet: Naboo" align="center" color="#FFF" visible="false" position="10 5 190"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+     <!--Naboo Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 95; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+  
+    <!--Kashyyk-->
+      <!-- Planet Mechanics-->
+     <a-entity 
+      id="orbit-kashyyk" mixin="orbit" animation="dur: 52191;">
+      <a-sphere
+       src="#kashyyk"
+       position="0 0 210"
+       radius="6.35"
+       animation="property: object3D.rotation.y;
+                   to: 360;
+                   dur: 10833;
+                   easing:linear;
+                   loop: true"
+       event-set__enter="_event: mouseenter; _target: #kashyykText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #kashyykText; visible: false"></a-sphere>
+      </a-entity>
+    
+      <!--Kashyyk Label-->
+      <a-text id="kashyykText" value="Mid Rim Planet: Kashyyk" align="center" color="#FFF" visible="false" position="10 5 210"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      
+      <!--Kashyyk Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 105; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      <!--Dathomir-->
+      <!-- Planet Mechanics-->
+      <a-entity
+      id="orbit-dathomir" mixin="orbit" animation="dur: 67260;">
+      <a-sphere
+        src="#dathomir"
+        position="0 0 235"
+        radius="5.23"
+        animation="property: object3D.rotation.y;
+                   to: 360;
+                   dur: 10000;
+                   easing:linear;
+                   loop: true"
+        event-set__enter="_event: mouseenter; _target: #dathomirText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #dathomirText; visible: false"></a-sphere>
+      </a-entity>
+      <!--Dathomir Label-->
+      <a-text id="dathomirText" value="Mid Rim Planet: Dathomir" align="center" color="#FFF" visible="false" position="10 5 235"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      
+      <!--Dathomir Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 118; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      <!--Mandalore-->
+      <!-- Planet Mechanics-->
+    <a-entity
+      id="orbit-mandalore" mixin="orbit" animation="dur: 50136;">
+      <a-sphere
+       src="#mandalore"
+       position="0 0 260"
+       radius="4.6"
+       animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 7916;
+                  easing:linear;
+                  loop: true"
+       event-set__enter="_event: mouseenter; _target: #mandaloreText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #mandaloreText; visible: false"></a-sphere>
+    </a-entity>
+      <!--Mandalore Label-->
+      <a-text id="mandaloreText" value="Mid Rim Planet: Mandalore" align="center" color="#FFF" visible="false" position="10 5 260"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      
+      <!--Mandalore Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 130; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      
+      <!--Geonosis-->
+      <!-- Planet Mechanics-->
+    <a-entity
+       id="orbit-geonosis" mixin="orbit" animation="dur: 35068;">
+      <a-sphere
+       src="#geonosis"
+       position="0 0 280"
+       radius="5.65"
+       animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 12500;
+                  easing:linear;
+                  loop: true"
+       event-set__enter="_event: mouseenter; _target: #geonosisText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #geonosisText; visible: false"></a-sphere>
+    <!--Rings of Geonosis-->
+       <a-entity 
+          id="geonosis-ring-1" 
+          position="0 0 280"
+          geometry="primitive: torus; radius: 6.2; radiusTubular: 0.1;segmentsTubular: 30"
+          material="color: #f4d79b;" 
+          rotation="90 0 0" 
+          scale="1 1 0.1"
+          animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 20000;
+                  easing:linear;
+                  loop: true"></a-entity>       
+        <a-entity
+          id="geonosis-ring-2" 
+          position="0 0 280"
+          geometry="primitive: torus; radius: 6.7; radiusTubular: 0.05;segmentsTubular: 50"
+          material="color: #491919" 
+          rotation="90 0 0" 
+          scale="1 1 0.1"
+          animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 30000;
+                  easing:linear;
+                  loop: true"></a-entity>
+         <a-entity
+          id="geonosis-ring-3" 
+          position="0 0 280"
+          geometry="primitive: torus; radius: 7.2; radiusTubular: 0.05;segmentsTubular: 50"
+          material="color: #efc56f;" 
+          rotation="90 0 0" 
+          scale="1 1 0.1"
+          animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 40000;
+                  easing:linear;
+                  loop: true"></a-entity>
+         <a-entity
+          id="geonosis-ring-4" 
+          position="0 0 280"
+          geometry="primitive: torus; radius: 7.6; radiusTubular: 0.05;segmentsTubular: 50"
+          material="color: #efc56f;" 
+          rotation="90 0 0" 
+          scale="1 1 0.1"
+                  animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 45000;
+                  easing:linear;
+                  loop: true"></a-entity>
+         <a-entity 
+          id="geonosis-ring-5" 
+          position="0 0 280"
+          geometry="primitive: torus; radius: 8.4; radiusTubular: 0.25;segmentsTubular: 50"
+          material="color: #491919;" 
+          rotation="90 0 0" 
+          scale="1 1 0.1"
+          animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 50000;
+                  easing:linear;
+                  loop: true"></a-entity> 
+      </a-entity>
+      <!--Geonosis Label-->
+      <a-text id="geonosisText" value="Outer Rim Planet: Geonosis" align="center" color="#FFF" visible="false" position="10 5 280"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      <!--Geonosis Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 140; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+    <!--Tattooine-->
+    <!-- Planet Mechanics-->
+    <a-entity
+      id="orbit-tattooine" mixin="orbit" animation="dur: 41643;">
+     <a-sphere
+       src="#tattooine"
+       position="0 0 300"
+       radius="5.23"s
+       animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 10000;
+                  easing:linear;
+                  loop: true"
+       event-set__enter="_event: mouseenter; _target: #tattooineText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #tattooineText; visible: false"></a-sphere>
+    </a-entity>
+      <!--Tatooine Label-->
+      <a-text id="tattooineText" value="Outer Rim Planet: Tattooine" align="center" color="#FFF" visible="false" position="10 5 300"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      <!--Tatooine Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 151; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      <!--Hoth-->
+      <!--Planet Mechanics-->
+   <a-entity
+      id="orbit-hoth" mixin="orbit" animation="dur: 75205;">
+     <a-sphere
+       src="#hoth"
+       position="0 0 320"
+       radius="3.6"
+       animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 10000;
+                  easing:linear;
+                  loop: true"
+       event-set__enter="_event: mouseenter; _target: #hothText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #hothText; visible: false"></a-sphere>
+    </a-entity>
+      
+      <!--Hoth label-->
+      <a-text id="hothText" value="Outer Rim Planet: Hoth" align="center" color="#FFF" visible="false" position="10 5 320"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      <!--Hoth Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 160; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      <!--Batuu-->
+      <!-- Planet Mechanics-->
+     <!--<a-entity
+      id="orbit-batuu" mixin="orbit" animation="dur: 50000;">-->
+      <a-sphere
+       src="#batuu"
+       position="0 0 340"
+       radius="6.37"
+       animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 10000;
+                  easing:linear;
+                  loop: true"
+       event-set__enter="_event: mouseenter; _target: #batuuText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #batuuText; visible: false"></a-sphere>
+      </a-entity>
+      <!--Batuu Label-->
+      <a-text id="batuuText" value="Outer Rim Planet: Batuu" align="center" color="#FFF" visible="false" position="10 5 340"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+
+      <!--Batuu Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 170; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+      <!--Dagobah-->
+      <!-- Planet Mechanics-->
+    <a-entity
+      id="orbit-dagobah" mixin="orbit" animation="dur: 46712;">
+      <a-sphere
+       src="#dagohbah"
+       position="0 0 360"
+       radius="7.23"
+       animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 10000;
+                  easing:linear;
+                  loop: true"
+       event-set__enter="_event: mouseenter; _target: #batuuText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #batuuText; visible: false"></a-sphere>
+    </a-entity>
+      <!--Dogobah Label-->
+      <a-text id="dagobahText" value="Outer Rim Planet: Dagobah" align="center" color="#FFF" visible="false" position="10 5 360"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      <!--Here-->
+      <!--Dagobah Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 180; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+    
+      
+      <!--Mustafar-->
+      <!-- Planet Mechanics-->
+    <a-entity
+      id="orbit-mustafar" mixin="orbit" animation="dur: 56438;">
+     <a-sphere
+       src="#mustafar"
+       position="0 0 380"
+       radius="2.1"
+       animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 10000;
+                  easing:linear;
+                  loop: true"
+       event-set__enter="_event: mouseenter; _target: #mustafarText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #mustafarText; visible: false"></a-sphere>
+    </a-entity>
+      <!--Mustafar Label-->
+      <a-text id="mustafarText" value="Outer Rim Planet: Mustafar" align="center" color="#FFF" visible="false" position="10 5 380"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      
+      <!--Mustafar Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 190; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+    
+    <!--Endor-->
+      <!-- Planet Mechanics-->
+    <a-entity
+      id="orbit-endor"mixin="orbit" animation="dur: 55068;">
+    <a-sphere
+       src="#endor"
+       position="0 0 400"
+       radius="2.45"
+       animation="property: object3D.rotation.y;
+                  to: 360;
+                  dur: 10000;
+                  easing:linear;
+                  loop: true"
+       event-set__enter="_event: mouseenter; _target: #endorText; visible: true"
+       event-set__leave="_event: mouseleave; _target: #endorText; visible: false"></a-sphere>
+      </a-entity>
+      
+      <!--Endor Label-->
+      <a-text id="endorText" value="Outer Rim Planet: Endor" align="center" color="#FFF" visible="false" position="10 5 400"
+                geometry="primitive: plane; width: 4.75" material="color: #333" scale="2.5 2.5 2.5"></a-text>
+      
+      
+      <!--Endor Orbital Guide-->
+      <a-entity geometry="primitive: torus; radius: 200; radiusTubular: 0.01;segmentsTubular: 50" material="color: #FFFFFF;opacity: 0.3"
+                rotation="90 0 0" scale="2 2 0.1"></a-entity>
+      
+  </a-scene>
+  </body>
+</html>
